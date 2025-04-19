@@ -1,0 +1,210 @@
+/* Modern Glassmorphism Design */
+:root {
+  --primary: #6c5ce7;
+  --secondary: #a29bfe;
+  --danger: #ff7675;
+  --success: #55efc4;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #130f40, #30336b);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-title {
+  color: var(--light);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.7);
+  animation: pulse 2s infinite alternate;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.glass-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.glow-button {
+  padding: 15px 25px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+}
+
+.glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+.task-stack {
+  list-style: none;
+  margin-bottom: 25px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.task-stack::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-stack::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task-item.completed {
+  background: rgba(85, 239, 196, 0.1);
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.task-text {
+  color: var(--light);
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.task-btn:hover {
+  transform: scale(1.1);
+}
+
+.complete-btn {
+  background: var(--success);
+  color: var(--dark);
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.action-btn.danger {
+  background: rgba(255, 118, 117, 0.2);
+  color: var(--danger);
+}
+
+.action-btn.danger:hover {
+  background: rgba(255, 118, 117, 0.3);
+}
+
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 10px rgba(108, 92, 231, 0.7);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(108, 92, 231, 0.9), 0 0 30px rgba(108, 92, 231, 0.5);
+  }
+}
