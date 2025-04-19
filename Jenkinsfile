@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define environment variables if needed
         JAVA_HOME = 'C:\\Program Files\\Java\\jdk-17'
-        MAVEN_HOME = 'C:\\Program Files\\Apache\\apache-maven-3.8.1'
+        MAVEN_HOME = 'C:\Users\abhin\Downloads\apache-maven-3.9.9'
         PATH = "${JAVA_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}"
     }
 
