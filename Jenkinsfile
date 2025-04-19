@@ -38,18 +38,18 @@ pipeline {
                 // bat 'deploy.bat'
             }
         }
+    }
 
-        post {
-            always {
-                echo 'Cleaning up...'
-                // Perform any cleanup tasks
-            }
-            success {
-                echo 'Build and tests passed successfully.'
-            }
-            failure {
-                echo 'Build or tests failed.'
-            }
+    post {
+        always {
+            echo 'Cleaning up...'
+            // Perform any cleanup tasks here
+        }
+        success {
+            echo 'Build and tests passed successfully.'
+        }
+        failure {
+            echo 'Build or tests failed.'
         }
     }
 }
